@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.tj.loginserverconnectpractice.databinding.ActivityLoginBinding;
 import com.tj.loginserverconnectpractice.utils.ConnectServer;
+import com.tj.loginserverconnectpractice.utils.ContextUtil;
 
 import org.json.JSONObject;
 
@@ -33,6 +34,10 @@ public class LoginActivity extends BaseActivity {
                 String inputId = act.loginIdEdt.getText().toString();
                 String inputPw = act.loginPwEdt.getText().toString();
 
+//                1.2 - 입력받은 ID를 SharedPreferences에 저장.
+                ContextUtil.setUserInputId(mContext, inputId);
+
+
 //                2. 받아온 아이디와 비번이 정말로 올바른 회원지? 검사
 //                 아이디/비번이 모두 동일한 사람이 회원 명부에 있는지? 검사.
 
@@ -57,6 +62,10 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+        String savedUserId = ContextUtil.getUserInputId(mContext);
+
+        act.loginIdEdt.setText(savedUserId);
 
     }
 
