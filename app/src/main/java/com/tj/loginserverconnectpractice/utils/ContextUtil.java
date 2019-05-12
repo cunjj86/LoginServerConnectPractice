@@ -10,7 +10,6 @@ public class ContextUtil {
 
 //    이 메모에서 다루는 항목들의 리스트를 변수로 생성.
     private static final String USER_INPUT_ID = "USER_INPUT_ID";
-    private static final String USER_INPUT_PW = "USER_INPUT_PW";
 
 //    실제로 각각의 항목을 저장/불러오는 기능
 
